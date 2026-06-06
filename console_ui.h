@@ -43,9 +43,7 @@ enum TextStyle {
     TS_DIM          = 2,
     TS_ITALIC       = 3,
     TS_UNDERLINE    = 4,
-    TS_BLINK        = 5,
     TS_REVERSE      = 7,
-    TS_HIDDEN       = 8,
     TS_STRIKETHROUGH= 9
 };
 
