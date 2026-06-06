@@ -5,8 +5,8 @@
 构建、测试与静态检查命令
 - 仓库中未配置专门的构建脚本或 CI。
 - 快速编译并运行（Linux/macOS）：
-  - 编译：g++ -std=c++17 -pthread test.cpp -o test
-  - 运行：./test
+  - 编译并运行（Linux 示例）：g++ -std=c++17 -Wall test.cpp -o test && ./test
+  - 运行（单独）：./test
 - 快速编译并运行（MSVC）：
   - 编译：cl /EHsc test.cpp
   - 运行：test.exe
