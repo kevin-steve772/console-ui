@@ -37,12 +37,28 @@ enum BgColor {
     BG_WHITE   =47
 };
 
+enum TextStyle {
+    TS_NONE         = 0,
+    TS_BOLD         = 1,
+    TS_DIM          = 2,
+    TS_ITALIC       = 3,
+    TS_UNDERLINE    = 4,
+    TS_BLINK        = 5,
+    TS_REVERSE      = 7,
+    TS_HIDDEN       = 8,
+    TS_STRIKETHROUGH= 9
+};
+
 inline void mvc(int x, int y) {
     printf("\033[%d;%dH", y, x);
 }
 
-inline void clrtxt(const string& text, int txtcolor, int bgcolor) {
-    printf("\033[%d;%dm%s\033[0m", txtcolor, bgcolor, text.c_str());
+inline void clrtxt(const string& text, int txtcolor = DEFAULT, int bgcolor = BG_DEFAULT, int style = TS_NONE) {
+    if (style == TS_NONE) {
+        printf("\033[%d;%dm%s\033[0m", txtcolor, bgcolor, text.c_str());
+    } else {
+        printf("\033[%d;%d;%dm%s\033[0m", style, txtcolor, bgcolor, text.c_str());
+    }
 }
 
 inline void hc() {
